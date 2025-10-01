@@ -1,16 +1,67 @@
 :root {
-    background: #E3EDFB;
+  background: #e3edfb;
 
-    --color-icon: #0B3A67;
+  --color-icon: #0b3a67;
 
-    --image-width: 8rem;
-    --card-padding: 1rem;
+  --image-width: 8rem;
+  --card-padding: 1rem;
 
-    --font-heading: 1.75rem;
+  --font-heading: 1.75rem;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+
+.container {
+  display: grid;
+  grid-template-columns: var(--image-width) 1fr;
+  padding: var(--card-padding);
+  background-color: white;
+  gap: 2rem;
+  align-items: start;
+
+  img {
+    align-items: center;
+    place-self: center;
+    width: var(--image-width);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .text {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-column: 2/3;
+    row-gap: 0.8rem;
+
+    h1 {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: var(--font-heading);
+      font-weight: 800;
+    }
+
+    p {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 1rem;
+      color: cadetblue;
+      font-weight: 600;
+      line-height: 1rem;
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--color-icon);
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
